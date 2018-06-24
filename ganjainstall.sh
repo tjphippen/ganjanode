@@ -54,6 +54,6 @@ sleep 3
 echo
 echo "Generated Wallet masternode.conf:"
 echo
-echo $MNNAME $IPADDR:$RPCPORT $GENKEY $TXID $TXINDEX
+echo $MNNAME $IPADDR:$MNPORT $GENKEY $TXID $TXINDEX
 echo
 echo "Enjoy GanjaProject"
