@@ -1,19 +1,23 @@
 #!bin/bash
 echo "GanjaCoin Masternode Setup by siforek"
-echo "-------------------------------------\n"
+echo "-------------------------------------"
+echo
 IPADDR=$(ip route get 8.8.8.8 | awk 'NR==1 {print $NF}')
 read -e -p "VPS IP Address: " -i "$IPADDR" IPADDR
 read -e -p "Choose RPC Port: " -i "12419" RPCPORT
-read -e -p "Choose RPC User: " RPCUSER
-read -e -p "Choose RPC Password: " RPCPASS
 read -rsp $'This will take a while so smoke a bowl & chill out, press any key to continue...\n' -n1 key
 apt-get update && apt-get -y upgrade && apt-get -y dist-upgrade && apt-get -y autoremove && apt-get -y install ufw fail2ban libwww-perl build-essential libtool automake autotools-dev autoconf pkg-config libssl-dev libgmp3-dev libevent-dev bsdmainutils libdb++-dev libminiupnpc-dev libboost-all-dev libqrencode-dev unzip && fallocate -l 4G /swapfile && chmod 600 /swapfile && mkswap /swapfile && swapon /swapfile && echo "vm.swappiness=10" >> /etc/sysctl.conf && echo "/swapfile none swap sw 0 0" >> /etc/fstab
-ufw allow 22/tcp && ufw allow $RPCPORT/tcp && yes | ufw enable
+ufw allow 22/tcp && ufw allow $RPCPORT/tcp
+yes | ufw enable
 mkdir -p ~/coins && cd ~/coins && git clone https://github.com/legends420/GanjaCoin.git && cd ~/coins/GanjaCoin/src && make -f makefile.unix
 ~/coins/GanjaCoin/src/ganjacoind
 sudo cp ~/coins/GanjaCoin/MNSampleGanjaProject.conf ~/.Ganjaproject2/Ganjaproject.conf
+read -e -p "Choose RPC User: " RPCUSER
+read -e -p "Choose RPC Password: " RPCPASS
 read -e -p "Key(genkey): " GENKEY
+read -e -p "Transaction ID: " TXID
 read -e -p "TXINDEX(0 or 1): " TXINDEX
+read -e -p "Wallet Masternode Name: " MNNAME
 cat > ~/.Ganjaproject2/Ganjaproject.conf <<EOF
 rpcuser=$RPCUSER
 rpcpassword=$RPCPASS
@@ -44,6 +48,10 @@ addnode=216.173.152.247
 addnode=91.121.95.32
 addnode=45.76.2.44
 EOF
-echo "start node"
+echo "starting node"
 ~/coins/GanjaCoin/src/ganjacoind
+echo "Generated Wallet masternode.conf:"
+echo
+echo $MNNAME $IPADDR:$RPCPORT $GENKEY $TXID $TXINDEX
+echo
 echo "Enjoy GanjaProject"
