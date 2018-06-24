@@ -60,8 +60,38 @@ myMN1 178.128.171.186:12419 5e2aqYqRKKAWpM2fpwwqYZnqkjZ93sEa4bHy2a7BPa5D8nPzhxL 
 
 ```
 The Ganjaproject.conf file will be written for you & your masternode will start.
-- Type/paste  ```~/coins/GanjaCoin/src/ganjacoind getinfo``` 
+- Type/paste  ```watch ~/coins/GanjaCoin/src/ganjacoind getinfo``` 
 to see wallet version, connection & current block. 
+
+```
+{
+    "version" : "v1.0.0.7-60032",
+    "protocolversion" : 60032,
+    "walletversion" : 60000,
+    "balance" : 0.00000000,
+    "darksend_balance" : 0.00000000,
+    "newmint" : 0.00000000,
+    "stake" : 0.00000000,
+    "blocks" : 3011,
+    "timeoffset" : 0,
+    "moneysupply" : 39536001.40000000,
+    "connections" : 26,
+    "proxy" : "",
+    "ip" : "192.241.221.149",
+    "difficulty" : {
+        "proof-of-work" : 0.00158072,
+        "proof-of-stake" : 5079765.16341258
+    },
+    "testnet" : false,
+    "keypoololdest" : 1529869661,
+    "keypoolsize" : 101,
+    "paytxfee" : 0.00001000,
+    "mininput" : 0.00000000,
+    "errors" : ""
+}
+```
+
+- If after a few minutes you still have `"connections" : 0,` & `"blocks" : 0,` try running `~/coins/GanjaCoin/src/ganjacoind stop`	and then `~/coins/GanjaCoin/src/ganjacoind` to restart it. 
 
 After current number of blocks matches http://explorer.ganjacoinpro.com/ go back to your PC Wallet to start it.
 
