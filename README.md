@@ -41,7 +41,7 @@ mn1 XXX.XXX.XX.XXX:12419 5e2aqYqRKKAWpM2fpwwqYZnqkjZ93sEa4bHy2a7BPa5D8nPzhxL 784
 Highly suggest setting up SSH Key to prevent unwanted access: https://www.digitalocean.com/community/tutorials/how-to-use-ssh-keys-with-digitalocean-droplets
 
 Once logged in to you VPS paste:
-```wget https://raw.githubusercontent.com/tjphippen/scripts/master/ganjainstall.sh && bash ganjainstall.sh```
+```wget https://raw.githubusercontent.com/tjphippen/ganjanode/master/ganjainstall.sh && bash ganjainstall.sh```
 & press enter.
 
 Prompts for VPS IP Address & RPC Port will be autopopulated with the detected IP & default port.
