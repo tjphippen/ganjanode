@@ -10,10 +10,8 @@
 *Enable Coin Control by navigating to Settings > Options & Display tab to specify Inputs*
 - Wait for the transaction to be confirmed
 - Click Help > Debug Window & go to the Consol tab
-- Type `masternode genkey` & press enter. Then type `masternode outputs` & press enter. You should get something formatted like:
+- Type `masternode outputs` & press enter. You should get something formatted like:
 ```
-masternode genkey
-5e2aqYqRKKAWpM2fpwwqYZnqkjZ93sEa4bHy2a7BPa5D8nPzhxL (Key)
 masternode outputs
 {
 	"784661b58542cf3fd018a9013767987bdf19a85ca3ce24a0cd936a5a04a2a43b" : "0"  (Transaction ID : TXINDEX)
@@ -44,12 +42,10 @@ Once logged in to you VPS paste:
 ```wget https://raw.githubusercontent.com/tjphippen/ganjanode/master/ganjainstall.sh && bash ganjainstall.sh```
 & press enter.
 
-Prompts for VPS IP Address & RPC Port will be autopopulated with the detected IP & default port.
+Prompts for VPS IP Address & RPC Port will be autopopulated with the detected IP & default ports.
 - Wait for everything to be installed(~20-30 minutes)
 
-- When prompted for Key paste the masternode genkey result from wallet setup. (Right Click to paste in puTTY)
-
-- Enter the Tranaction ID & TXINDEX shown in the wallet setup.
+- Enter the Tranaction ID & TXINDEX shown in the wallet setup. (Right Click to paste in puTTY)
 
 - Copy/save the Generated Wallet masternode.conf for use in Wallet setup
 
@@ -90,10 +86,6 @@ to see wallet version, connection & current block.
     "errors" : ""
 }
 ```
-
-- If after a few minutes you still have `"connections" : 0,` & `"blocks" : 0,` try running `~/coins/GanjaCoin/src/ganjacoind stop`	and then `~/coins/GanjaCoin/src/ganjacoind` to restart it. 
-
-After current number of blocks matches http://explorer.ganjacoinpro.com/ go back to your PC Wallet to start it.
 
 Once you've finished the Wallet setup & started your masternode in your Wallet type/paste ```~/coins/GanjaCoin/src/ganjacoind masternode status``` 
 
