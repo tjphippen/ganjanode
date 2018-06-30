@@ -103,7 +103,7 @@ echo "Connected!"
 echo "Generating Masternode key.."
 GENKEY=$(~/coins/GanjaCoin/src/ganjacoind masternode genkey)
 sed -i '16s/.*/masternodeprivkey='$GENKEY'/' ~/.Ganjaproject2/Ganjaproject.conf
-sed -i '14s/.*/masternode=1'/' ~/.Ganjaproject2/Ganjaproject.conf
+sed -i '14s/.*/masternode=1/' ~/.Ganjaproject2/Ganjaproject.conf
 ~/coins/GanjaCoin/src/ganjacoind stop
 sleep 3
 ~/coins/GanjaCoin/src/ganjacoind
