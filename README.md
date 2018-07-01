@@ -45,18 +45,19 @@ Once logged in to you VPS paste:
 ![Alt text](setup-start.png?raw=true "Setup Start")
 
 Prompts for VPS IP Address & RPC Port will be autopopulated with the detected IP & default ports.
-- Wait for everything to be installed(~20-30 minutes)
 
 - Enter the Tranaction ID & TXINDEX shown in the wallet setup. (Right Click to paste in puTTY)
 
-- Copy/save the Generated Wallet masternode.conf for use in Wallet setup
+- Wait for everything to be installed(~20-30 minutes)
 
-![Alt text](setup-complete.png?raw=true "Setup Complete")
+- Copy/save the Generated Wallet masternode.conf for use in Wallet setup
 
 ```
 myMN1 178.128.171.186:12419 5e2aqYqRKKAWpM2fpwwqYZnqkjZ93sEa4bHy2a7BPa5D8nPzhxL 784661b58542cf3fd018a9013767987bdf19a85ca3ce24a0cd936a5a04a2a43b 0
 
 ```
+![Alt text](setup-complete.png?raw=true "Setup Complete")
+
 The Ganjaproject.conf file will be written for you & your masternode will start.
 - Type/paste  ```watch ~/coins/GanjaCoin/src/ganjacoind getinfo``` 
 to see wallet version, connection & current block. 
