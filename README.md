@@ -91,7 +91,8 @@ Once you've finished the Wallet setup & started your masternode in your Wallet t
 
 It should be status 9.
 You're all set :)
-Ganjacoind will automatically start on boot
+
+Ganjacoind will automatically start in case of reboot.
 
 Also find your masternode status/info listed here: http://explorer.ganjacoinpro.com/masternodes
 
