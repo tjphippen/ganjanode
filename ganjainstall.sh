@@ -104,6 +104,8 @@ echo "Generating Masternode key.."
 GENKEY=$(~/coins/GanjaCoin/src/ganjacoind masternode genkey)
 sed -i '16s/.*/masternodeprivkey='$GENKEY'/' ~/.Ganjaproject2/Ganjaproject.conf
 sed -i '14s/.*/masternode=1/' ~/.Ganjaproject2/Ganjaproject.conf
+crontab -l | { cat; echo "@reboot ~/coins/GanjaCoin/src/ganjacoind"; } | crontab -
+echo "Updated crontab to start Ganjacoind on reboot"
 ~/coins/GanjaCoin/src/ganjacoind stop
 sleep 3
 ~/coins/GanjaCoin/src/ganjacoind
